@@ -1,0 +1,68 @@
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+@keyframes FadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+
+$animation-tremor-gap: 6px;
+
+@keyframes NeonTremor1 {
+  0% {
+    transform: translateX(-$animation-tremor-gap);
+  }
+  4% {
+    transform: translateX($animation-tremor-gap);
+  }
+  6% {
+    transform: translateX(-$animation-tremor-gap);
+  }
+  8% {
+    transform: translateX($animation-tremor-gap);
+  }
+  10% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes NeonTremor2 {
+  0% {
+    transform: translateX($animation-tremor-gap);
+  }
+  4% {
+    transform: translateX(-$animation-tremor-gap);
+  }
+  6% {
+    transform: translateX($animation-tremor-gap);
+  }
+  8% {
+    transform: translateX(-$animation-tremor-gap);
+  }
+  10% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

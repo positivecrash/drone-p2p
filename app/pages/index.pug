@@ -1,0 +1,37 @@
+extends extends/layout.pug
+
+block html_head
+	- var pageTitle = 'Drone P2P Framework'
+
+block header
+	- var header_classes = 'header---wrap-banner--dark'
+	- var header_banner = true
+
+block content
+	main(role="main")
+		.w-base
+			section.sec-phrase
+				.sec-phrase--inside Фреймворк предоставляет разработчику возможности p2p технологий, в частности IPFS и Ethereum, для обеспечения коммуникации с автономной базой мобильной робототехники.
+
+			section
+				h2 С Drone p2p вы можете решить следующие задачи:
+
+				.row
+					.col-sm-4.t-align-center.line Настроить запуск множества дронов оператором по сигналу, отправленному через широковещательный канал ipfs pubsub.
+					.col-sm-4.t-align-center.line Создать serverless личные кабинеты операторов с прямым доступом к флоту дронов.
+					.col-sm-4.t-align-center.line Присоединиться к программе открытых рынков сети Робономика.
+
+		section.sec-vivid.section-padding.m-b-0
+			.w-base
+				h2 СЕГОДНЯ ДОСТУПНЫ СЛЕДУЮЩИЕ УСЛУГИ DRONE P2P ASSISTANT:
+
+				.w-small.t-align-center
+					.line Регистрация ID дрона в Ethereum mainnet Blockchain.
+					.line Публикация полетных маршрутов / миссий.
+					.line Симуляция полета и корректировка маршрута перед вылетом.
+
+				.t-align-center.m-t-base-2
+					a(href="#").btn
+						span.btn-content
+							span.icon-app.m-r-base
+							span Try dApp

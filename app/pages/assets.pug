@@ -1,0 +1,44 @@
+extends extends/layout.pug
+
+block html_head
+	- var pageTitle = 'Drone P2P Framework'
+
+block header
+	- var header_banner = false
+
+
+block content
+	main(role="main")
+		.w-text
+			section
+				h1 Logo and other assets
+
+				h2 Visual guide 2018
+				
+				p.theme-dark: a(href="#").d-b
+					img.i-block(src="assets/i/visual-guide-2018-dark@2x.png")
+
+				p.theme-light: a(href="#").d-b
+						img.i-block(src="assets/i/visual-guide-2018-light@2x.png")
+					
+				p.t-align-center
+					a.t-uppercase(href="#") Download
+
+
+				h2 Logo Drone-p2p
+
+				.row
+					.col-sm-6.back-dark.t-align-center
+						p.assets-logo
+							img.i-block(alt="", src="assets/i/assets-logo/1-drone-p2p-logo-light.png")
+							span.assets-logo--download
+								span.assets-logo--download-inside
+									a(href="#"): b PNG
+									a(href="#"): b EPS
+					.col-sm-6.back-light.t-align-center
+						p.assets-logo
+							img.i-block(alt="", src="assets/i/assets-logo/4-drone-p2p-logo-dark.png")
+							span.assets-logo--download
+								span.assets-logo--download-inside
+									a(href="#"): b PNG
+									a(href="#"): b EPS

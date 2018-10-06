@@ -1,0 +1,240 @@
+html, body
+  {
+    height: 100%;
+    min-height: 100%;
+  }
+
+html
+  {
+    position: relative;
+    font-size: 100%;
+  }
+
+body
+  {
+    @extend %font_base;
+    position: relative;
+
+    opacity: 0;
+    animation: 0.4s FadeIn ease-in forwards;
+
+    /* Темная тема по умолчанию */
+    background-color: $c-bg-body--dark;
+    color: $c-text--dark;
+
+    height: auto;
+  }
+
+body#{$selector--theme-light}
+  {
+    background-color: $c-bg-body--light;
+    color: $c-text--light;
+  }
+
+
+#{$selector--theme-light} .theme-dark { display: none; }
+#{$selector--theme-dark} .theme-light { display: none; }
+
+
+
+
+
+
+/* DISPLAY */
+
+.w-base { @extend %width_base; }
+
+.w-text 
+  {
+    @extend %width_base;
+    max-width: $width-text - $padding-base-side * 2;
+  }
+
+.w-small 
+  {
+    @extend %width_base;
+    max-width: $width-small - $padding-base-side * 2;
+  }
+
+
+
+.w-paddings
+  {
+    padding-left: $padding-base-side;
+    padding-right: $padding-base-side;
+    box-sizing: border-box;
+  }
+
+.w-full
+  {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+
+.f-zoom{ @extend %floating-fix; }
+.f-left { float: left; }
+.f-right { float: right; }
+
+.d-t { display: table; }
+.d-t_row { display: table-row; }
+.d-t_cell { display: table-cell; }
+
+.d-ib { @extend %inline-block; }
+.d-b { display: block; }
+
+.align-v-m { vertical-align: middle; }
+
+/* END OF DISPLAY */
+
+
+
+
+
+/* MARGINS, PADDING */
+
+.m-r-base { margin-right: rem($vertical-rythm); }
+.m-t-base-2 { margin-top: rem($vertical-rythm*2); }
+
+.m-b-0 { margin-bottom: 0; }
+
+/* end of MARGINS, PADDING */
+
+
+
+
+
+/* Dropdown mechanism */
+.dropdown
+  {
+    position: relative;
+
+    .dropdown-content
+      {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+      }
+
+    & > .dropdown-content
+      {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+    &:hover
+      {
+        & > .dropdown-content { animation: 0.2s FadeIn 0.4s ease-out forwards; }
+      }
+  }
+/* end of Dropdown mechanism */
+
+/* Toogler */
+.toggler
+  {
+    white-space: nowrap;
+
+    .toggler-title, .toggler-control
+      {
+        @extend %inline-block;
+        margin-left: rem(15px);
+
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+
+    .toggler-title
+      {
+        text-transform: uppercase;
+        font-size: rem(14px);
+      }
+
+    .toggler-control
+      {
+        width: rem(50px);
+        height: rem(22px);
+        border-radius: rem(10px);
+        position: relative;
+
+        &:after{
+          content:"";
+          display: block;
+          width: rem(18px);
+          height: rem(18px);
+          border-radius: rem(9px);
+
+          position: absolute;
+          top: rem(2px);
+          left: rem(2px);
+        }
+
+        // &.on:after{
+        //   left: auto;
+        //   right: rem(2px);
+        // }
+      }
+
+
+    /* Темная тема по умолчанию, на темной теме тоглер светлый */
+    .toggler-control
+      {
+        background-color: $c-bg-header--light;
+
+        &:after{
+          background-color: $c-link--dark;
+        } 
+      }
+  }
+/* end of Toogler */
+
+
+
+
+.assets-logo
+  {
+    display: block;
+    box-sizing: border-box;
+    padding: rem(20px);
+    position: relative;
+
+    .assets-logo--download
+      {
+        display: none;
+
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        z-index: 0;
+
+        .assets-logo--download-inside
+          {
+            height: 100%;
+            @extend %flex-align--center;
+          }
+
+        &, a { color: $c-text--dark; }
+
+        a
+          {
+            margin-left: rem(20px);
+            &:first-child { margin-left: 0; }
+          }
+        
+        /* Темная тема */
+        background-color: rgba($c-link-hover--dark, .9);
+      }
+
+
+    &:hover
+      {
+
+        .assets-logo--download
+          {
+            display: block;
+          }
+
+      }
+  }

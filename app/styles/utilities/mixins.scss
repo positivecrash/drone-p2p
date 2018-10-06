@@ -1,0 +1,6 @@
+@mixin logo-size($w){
+	$p: $w/image-width($src-logo--header-top);
+
+	width: rem(image-width($src-logo--header-top) * $p);
+    height: rem(image-height($src-logo--header-top) * $p);
+}

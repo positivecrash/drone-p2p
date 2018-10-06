@@ -1,0 +1,205 @@
+/* EXTENDS */
+%font_base
+	{
+		font-size: rem($font-size-basic);
+		line-height: 1.4;
+		font-family: $font-family-base;
+		word-spacing: normal;
+		letter-spacing: 0;
+		font-weight: 300;
+	}
+
+
+
+
+/* TITLES */
+#{headings()}
+	{
+		margin-top: rem($vertical-rythm*4);
+		margin-bottom: rem($vertical-rythm);
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+
+	  	&:first-child
+		  	{
+		  		margin-top: 0;
+			}
+	}
+
+
+@for $i from 2 through 5
+	{
+	  h#{$i}{
+	    font-size: rem($font-size-title - 6 * $i);
+	    font-weight: 400;
+	  }
+	}
+
+
+h1
+	{
+		font-size: rem($font-size-title);
+		margin-bottom: rem($vertical-rythm*2);
+	}
+
+
+
+
+
+/* TEXT ELEMENTS */
+a 
+	{
+	  @extend %link_noline;
+	  transition: 0.2s ease-in all;
+
+	  /* Темная тема по умолчанию */
+	  @extend %theme-dark--link;
+	}
+
+#{$selector--theme-light} a
+	{
+		@extend %theme-light--link;
+	}
+
+#{$selector-header-banner--dark} a
+	{
+		@extend %theme-dark--link;
+	}
+
+
+ul, ol
+	{
+	  margin-left: 20px;
+	  margin-bottom: rem($vertical-rythm);
+
+	  ul, ol{
+	  	margin-top: rem($vertical-rythm);
+	  }
+	}
+
+
+
+li, p, blockquote
+	{
+	  margin-bottom: rem($vertical-rythm);
+
+	  &:last-child{
+	  	margin-bottom: 0;
+	  }
+	}
+
+hr
+	{
+		margin: rem($vertical-rythm 0);
+		background-color: $c-gray--dark;
+		height: 1px;
+		border: 0;
+	}
+
+b { font-weight: 500; }
+
+
+
+
+
+/* TEXT ADDITIONAL FORMAT */
+.t-align-center { text-align: center; }
+.t-align-right { text-align: right; }
+.t-align-left { text-align: left; }
+
+.t-paragraph-hyphened
+	{
+		text-align: justify;
+		hyphens: auto;
+	}
+
+.t-paragraph-nowrap { white-space: nowrap; }
+
+
+.t-color-text-dark { color: $c-text--dark; }
+.t-color-text-light { color: $c-text--light; }
+
+.t-uppercase
+	{
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+
+
+.line
+	{
+		position: relative;
+		padding: rem($vertical-rythm 0);
+		margin-bottom: 0;
+		margin-top: 0;
+
+		&:after{
+			content:"";
+			position: absolute;
+			bottom: 0;
+			left: 35%;
+			width: 30%;
+			height: 1px;
+
+			/* Темная тема по умолчанию */
+			background-color: $c-text--dark;
+		}
+
+		&:last-child:after
+			{
+				display: none;
+			}
+	}
+
+
+#{$selector--theme-light} .line:after{
+	background-color: $c-text--light;
+}
+
+
+.row *[class *= 'col-sm-']{
+  @media screen and (max-width: $bootstrap-sm) 
+  {
+    &.line { margin-bottom: 0; }
+  }
+
+  @media screen and (min-width: $bootstrap-sm) 
+  {
+    &.line:after { display: none; }
+  }
+}
+
+
+
+.list-double
+	{
+		margin-left: 0;
+		list-style: none;
+		@extend %floating-fix;
+
+		li{
+			float: left;
+			width: 50%;
+		}
+	}
+
+
+.i-block
+	{
+		@extend %i_block;
+	}
+
+
+.back-dark
+	{
+		background-color: $c-dark--vivid;
+		color: $c-light--vivid;
+	}
+
+.back-light
+	{
+		background-color: $c-light--vivid;
+		color: $c-dark--vivid;
+	}

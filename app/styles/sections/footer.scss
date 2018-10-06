@@ -1,0 +1,68 @@
+main[role="main"]{
+  padding-bottom: rem(231px);
+
+  @media screen and (max-width: $bootstrap-sm){
+    padding-bottom: rem(530px);
+  }
+}
+
+footer[role='contentinfo']
+  {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    color: $c-text--dark;
+
+    padding-top: rem(46px);
+    padding-bottom: rem(46px);
+
+
+    font-size: rem(16px);
+
+    @media screen and (max-width: $bootstrap-sm) 
+      {
+        padding-top: rem(66px);
+        
+        *[class *= 'col-sm-']{
+          margin-bottom: rem($vertical-rythm);
+        }
+      }
+    
+    .i-block
+      {
+        max-width: 300px;
+      }
+
+    .list-double
+      {
+
+        li
+          {
+            margin-bottom: $vertical-rythm/2;
+          }
+
+        a
+          {
+            color: $c-text--dark;
+            text-transform: uppercase;
+            font-weight: 500;
+
+            &:hover{
+              color: $c-crimson--neon;
+            }
+          }
+      }
+
+
+
+     /* Темная тема*/
+      background-color: $c-dark--vivid;
+  }
+
+
+#{$selector--theme-light} footer[role='contentinfo']
+  {
+    background-color: $c-dark--pale;
+  }

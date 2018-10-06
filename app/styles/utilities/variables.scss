@@ -1,0 +1,95 @@
+/* MEDIA QUERIES */
+$mq-desktop: 1056px;
+$mq-tablet: 750px;
+$mq-mobile: 500px;
+$mq-menuhide: $mq-tablet;
+$bootstrap-sm: 576px;
+$bootstrap-md: 768px;
+
+
+
+/* MESUARES */
+$width-base: $mq-desktop;
+$width-text: 780px;
+$width-small: 550px;
+$padding-base-side: 20px;
+
+
+
+/* COLORS */
+$c-dark--vivid: #000;
+$c-dark--mid: #0F0F0F;
+$c-dark--pale: #242424;
+$c-light--vivid: #fff;
+
+$c-blue--neon: #00FFFF;
+$c-blue--normal: #03A5ED;
+$c-blue--normal-dark: #0081BA;
+
+$c-gray--dark: #707070;
+$c-gray--mid: #C7C5C5;
+$c-gray--light: #F2F2F2;
+
+$c-crimson--neon: #FF00FF;
+$c-crimson--normal: #A316A3;
+
+
+/* THEME COLORS */
+$c-bg-body--dark: $c-dark--pale; // фон <body> в темной теме
+$c-bg-body--light: $c-light--vivid; // фон <body> в светлой теме
+$c-bg-header--dark: $c-dark--vivid; // фон верхней плашки шапки в т теме
+$c-bg-header--light: $c-light--vivid; // фон верхней плашки шапки в с теме
+$c-text--dark: $c-light--vivid;
+$c-text--light: $c-dark--mid;
+$c-link--dark: $c-blue--neon;
+$c-link--light: $c-blue--normal;
+$c-link-hover--dark: $c-crimson--neon;
+$c-link-hover--light: $c-crimson--normal;
+
+
+/* SRC */
+$src-logo--header-top: 'logo-dronep2p-light.png';
+$src-logo--header-light: 'logo-dronep2p-light.svg';
+$src-logo--header-dark: 'logo-dronep2p-dark.svg';
+$src-logo--header-dark-banner: 'logo-dronep2p-dark-banner.svg';
+
+
+
+/* SELECTORS */
+$selector--theme-dark: '.theme-dark';
+$selector--theme-light: '.theme-light';
+$selector-header-banner--dark: '.header---wrap-banner--dark'; // class для баннера в шапке (от него зависит цветовое оформление шапки)
+
+
+
+/* TEXT SETTINGS */
+$font-size-basic: 20px;
+$font-size-title: 42px; //h1
+$font-family-title:  'Montserrat', sans-serif;
+$font-family-base:  $font-family-title;
+$vertical-rythm: $font-size-basic * 1.2;
+
+
+
+
+
+
+
+
+
+$c-blue: #03A5ED;
+$c-dark: #333;
+$c-dark-green: #2C4C4B;
+$c-green: #3C9E1A;
+$c-orange: #F29100;
+$c-red: #F15A24;
+$c-red-dark: #C1272D;
+$c-red-vivid: #DB1212;
+$c-text: $c-dark;
+// $c-gray: #ccc;
+
+
+
+
+
+

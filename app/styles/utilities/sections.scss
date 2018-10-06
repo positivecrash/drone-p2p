@@ -1,0 +1,119 @@
+section
+  {
+    margin-top: rem($vertical-rythm*4);
+    margin-bottom: rem($vertical-rythm*4);
+  }
+
+.section-padding
+  {
+    padding-top: rem($vertical-rythm*4);
+    padding-bottom: rem($vertical-rythm*4);
+  }
+
+
+
+
+
+
+%secPhraseBorder{
+   position: relative;
+
+    &:before, &:after{
+      content: "";
+      position: absolute;
+    }
+}
+
+$secPhraseBorderWidth: 9px;
+$secPhraseCorners: 100px;
+
+.sec-phrase
+  {
+    font-size: rem(28px);
+    line-height: 1.5;
+    text-align: center;
+
+    border-width:  rem($secPhraseBorderWidth);
+    border-style: solid;
+
+    @extend %secPhraseBorder;
+
+    &:before, &:after{
+      width:  rem($secPhraseBorderWidth);
+      top:  rem($secPhraseCorners);
+      bottom:  rem($secPhraseCorners);
+    }
+
+    &:before { left: - rem($secPhraseBorderWidth); }
+    &:after { right: - rem($secPhraseBorderWidth); }
+
+    .sec-phrase--inside
+      {
+        padding: rem(70px);
+        max-width: $width-text;
+        margin: 0 auto;
+
+        @extend %secPhraseBorder;
+
+        &:before, &:after{
+          height:  rem($secPhraseBorderWidth);
+          left:  rem($secPhraseCorners);
+          right:  rem($secPhraseCorners);
+        }
+
+        &:before { top: - rem($secPhraseBorderWidth); }
+        &:after { bottom: - rem($secPhraseBorderWidth); }
+      }
+
+
+    /* Темная тема по умолчанию */
+    border-color: $c-dark--mid;
+
+    &:before, &:after, .sec-phrase--inside:before, .sec-phrase--inside:after{
+      background-color: $c-bg-body--dark;
+    }
+
+    @include maxTablet
+      {
+        border-width: $secPhraseBorderWidth 0;
+
+        &:before, &:after, .sec-phrase--inside:before, .sec-phrase--inside:after { display: none; }
+        .sec-phrase--inside { padding-left: 0; padding-right: 0; }
+      }
+  }
+
+
+/* Светлая тема */
+#{$selector--theme-light} .sec-phrase
+  {
+    &:before, &:after, .sec-phrase--inside:before, .sec-phrase--inside:after{
+      background-color: $c-bg-body--light;
+    }
+  }
+
+
+
+
+
+.sec-vivid
+  {
+
+    .line:after{
+      background-color: $c-blue--normal-dark;
+    }
+
+    /* Темная тема по умолчанию */
+    background-color: $c-blue--normal;
+    color: $c-text--dark;
+
+  }
+
+/* Светлая тема */
+#{$selector--theme-light} .sec-vivid
+  {
+    background-color: $c-gray--light;
+    color: $c-text--light;
+  }
+
+
+

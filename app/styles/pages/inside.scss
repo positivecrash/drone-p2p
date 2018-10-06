@@ -1,0 +1,14 @@
+.page-inside
+	{
+		height: auto;
+
+		main[role="main"]
+			{
+				padding-top: 80px;
+				padding-bottom: 220px;
+
+				@include maxTablet(){
+					padding-bottom: 300px;
+				}
+			}
+	}

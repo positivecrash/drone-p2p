@@ -1,0 +1,36 @@
+doctype html
+
+block html
+html(lang='en')
+	head
+		meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
+		meta(name='viewport' content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		
+		block html_head
+		title #{pageTitle} | airalab.org
+		meta(name='description' content=pageDescription || '')
+		meta(name='keywords' content=pageKeywords || '')
+
+
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;subset=cyrillic" type="text/css" media="all")
+
+
+		link(href='assets/css/dronep2p.min.css?v=1' rel='stylesheet')
+			
+		script(src='assets/js/main.min.js?v=1')
+
+		link(rel="icon" href="favicon.ico" type="image/x-icon")
+		link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
+		link(rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png")
+		link(rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png")
+
+	body(class='theme-light ' + bodyclass)
+		block header
+		if header_banner
+			include  ../includes/header.pug
+		else
+			include  ../includes/header-inside.pug
+		
+		block content
+
+		include ../includes/footer.pug

@@ -1,0 +1,54 @@
+header(role='banner' class=header_classes)
+	.header-top
+		.w-base
+			.d-t.w-full.header-top--content
+				.d-t_cell.align-v-m
+					//- a.logo(href="index.html"): span
+				.d-t_cell.align-v-m.t-align-right
+					nav.header-top--nav
+						.item
+							a.item-link.item-link--icon(href="#")
+								span.icon-info
+						.item
+							a.item-link.item-link--icon(href="#")
+								span.icon-github
+						//- .item.item-settings.dropdown
+						//- 	a.item-link(href="javascript:;") EN
+						//- 	.dropdown-content
+						//- 		.dropdown-content--inner
+						//- 			.header-dropdown--title Language
+						//- 			.header-dropdown--line
+						//- 				a.d-b(href="#") EN
+						//- 			.header-dropdown--line
+						//- 				a.d-b(href="#") RU
+						.item.item-settings.dropdown
+							a.item-link.item-link--icon(href="javascript:;")
+								span.icon-settings
+							.dropdown-content
+								.dropdown-content--inner
+									.header-dropdown--title Website settings
+									.header-dropdown--line.t-align-center
+										.toggler
+											span.toggler-title dark
+											a(href="javascript:;", data-theme="theme-dark").toggler-control#js-change-theme
+											span.toggler-title light
+									.header-dropdown--line.t-align-center.t-paragraph-nowrap
+										a.btn-circle.d-ib#js-text-size-minus(href="javascript:;"): span -
+										.format-textSize.d-ib
+											span A
+											span A
+											span A
+											#js-text-size-label.format-textSize--label 100
+										a.btn-circle.d-ib#js-text-size-plus(href="javascript:;"): span +
+
+
+	.header--banner-dark
+		.w-base
+			.banner-content
+				.logo: span
+				p The framework for multi-agent communication on mobile robotics market
+
+			.banner-image
+				img.banner-image-1(alt="", src="assets/i/pie-1.svg")
+				img.banner-image-2(alt="", src="assets/i/pie-2.svg")
+				img.banner-image-3(alt="", src="assets/i/drone.svg")

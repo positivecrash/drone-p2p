@@ -1,0 +1,523 @@
+@mixin theme_header_basics__dark(){
+  background-color: $c-bg-header--dark;
+  color: $c-text--dark;
+}
+
+@mixin theme_header_basics__light(){
+  background-color: $c-bg-header--light;
+  color: $c-text--light;
+}
+
+
+.header-top
+  {
+    position: relative;
+    z-index: 10;
+    padding: rem(20px 0);
+    font-size: rem(18px);
+
+    .d-t_cell{
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Темная тема по умолчанию */
+    @include theme_header_basics__dark();
+  }
+
+
+/* Header для светлой темы */
+#{$selector--theme-light} .header-top
+  {
+    @include theme_header_basics__light();
+  }
+
+
+/* Независимо от темы, внутри баннера одна цветность */
+#{$selector-header-banner--dark}
+  {
+
+    &, .header-top
+      {
+        @include theme_header_basics__dark();
+      }
+  }
+
+
+.header-top--content
+  {
+    position: relative;
+    
+    &:after
+    {
+      content:"";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 10px;
+      z-index: 0;
+
+      height: 1px;
+
+      margin-top: -0.5px;
+
+      /* Темная тема по умолчанию */
+      background-color: $c-bg-header--light;
+    }
+  }
+
+#{$selector--theme-light} .header-top--content:after{
+  background-color: $c-bg-header--dark;
+}
+
+#{$selector-header-banner--dark} .header-top--content:after{
+  background-color: $c-bg-header--light;
+}
+
+
+
+.logo
+  {
+    @extend %inline-block;
+
+    span
+      {
+        @extend %inline-block;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        $logo-w: image-width($src-logo--header-top);
+        @include logo-size($logo-w);
+
+        // width: rem(image-width($src-logo--header-top));
+        // height: rem(image-height($src-logo--header-top));
+      
+      }
+
+    /* Темная тема по умолчанию */
+    span { background-image: image-url($src-logo--header-dark); }
+  }
+
+#{$selector--theme-light} .logo
+  {
+    span { background-image: image-url($src-logo--header-light); }
+  }
+
+#{$selector-header-banner--dark} .logo
+  {
+    span { background-image: image-url($src-logo--header-dark); }
+  }
+
+
+.header-top .logo
+  {
+    padding: rem(0 10px 0 0);
+
+    /* Темная тема по умолчанию */
+    @include theme_header_basics__dark();
+  }
+
+
+#{$selector--theme-light} .header-top .logo
+  {
+    @include theme_header_basics__light();
+  }
+
+#{$selector-header-banner--dark} .header-top .logo
+  {
+    @include theme_header_basics__dark();
+  }
+
+
+
+
+.header-top--nav
+  {
+      @extend %inline-block;
+
+      /* Темная тема по умолчанию */
+      @include theme_header_basics__dark();
+
+
+      .item
+        {
+          @extend %inline-block;
+          margin-left: rem(10px);
+        }
+
+      .item-link
+        {
+          @extend %flex-align--center;
+          text-align: center;
+          width: rem(42px);
+          height: rem(42px);
+          cursor: pointer;
+          @extend %link_noline;
+
+          /* Темная тема по умолчанию */
+          border: 1px solid $c-bg-header--light;
+          color: $c-bg-header--light;
+        }
+
+      .item-settings
+        {
+          
+          .item-link
+            {
+              /* Темная тема по умолчанию */
+              color: $c-blue--neon;
+              border-color: $c-blue--neon;
+            }
+
+          &:hover .item-link
+            {
+              color: $c-crimson--neon;
+              border-color: $c-crimson--neon;
+            }
+        }
+
+      .item-link--icon
+        {
+          font-size: rem(22px);
+        }
+  }
+
+
+/* Светлая тема */
+#{$selector--theme-light} .header-top--nav
+  {
+
+    @include theme_header_basics__light();
+
+    .item-link
+      {
+        border: 1px solid $c-bg-header--dark;
+        color: $c-bg-header--dark;
+      }
+
+    .item-settings
+      {
+        
+        .item-link
+          {
+            color: $c-blue--normal;
+            border-color: $c-blue--normal;
+          }
+
+        &:hover .item-link
+          {
+            color: $c-crimson--normal;
+            border-color: $c-crimson--normal;
+          }
+
+        }
+
+  }
+
+
+/* Независимо от темы, внутри баннера одна цветность */
+#{$selector-header-banner--dark} .header-top--nav
+  {
+
+    @include theme_header_basics__dark();
+  
+    .item-link
+      {
+        border: 1px solid $c-bg-header--light;
+        color: $c-bg-header--light;
+      }
+
+    .item-settings
+      {
+        .item-link
+          {
+            color: $c-blue--neon;
+            border-color: $c-blue--neon;
+          }
+
+
+        &:hover .item-link
+          {
+            color: $c-crimson--neon;
+            border-color: $c-crimson--neon;
+          }
+      }
+  }
+
+
+
+
+/* DROPDOWNS */
+.header-top
+  {
+
+    .dropdown-content
+      {
+        top: rem(42px);
+        right: 0;
+        text-align: left;
+      }
+
+    .dropdown-content--inner
+      {
+        padding: rem(24px);
+        margin-top: rem(10px);
+
+        /* Темная тема по умолчанию */
+        @include theme_header_basics__light();
+        a { @extend %theme-light--link; }
+      }
+  }
+
+
+#{$selector--theme-light} .header-top .dropdown-content--inner
+  {
+    @include theme_header_basics__dark();
+    a { @extend %theme-dark--link; }
+  }
+
+#{$selector-header-banner--dark} .header-top .dropdown-content--inner
+  {
+    @include theme_header_basics__light();
+    a { @extend %theme-light--link; }
+  }
+
+
+
+.header-dropdown--title
+  {
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: 500;
+    padding-bottom: rem(5px);
+    border-bottom: 1px solid $c-text--light;
+  }
+
+.header-dropdown--line
+  {
+    padding: rem(10px 0);
+    border-bottom: 1px solid $c-gray--dark;
+
+    &:last-child
+      {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+  }
+
+#{$selector--theme-light} .header-dropdown--title
+  {
+    border-color: $c-gray--dark;
+  }
+
+#{$selector-header-banner--dark} .header-dropdown--title
+  {
+    border-color: $c-gray--dark;
+  }
+/* end of DROPDOWNS */
+
+
+
+.format-textSize
+  {
+    span {
+      margin-left: rem(2px);
+      &:firsth-child { margin-left: 0; }
+    }
+
+    span:nth-child(1) { font-size: 100%; }
+    span:nth-child(2) { font-size: 120%; }
+    span:nth-child(3) { font-size: 140%; }
+  }
+
+.format-textSize--label
+  {
+    font-size: 70%;
+
+    /* Для светлого фона в .dropdown */
+    background-color: $c-bg-body--light;
+    color: $c-text--light;
+  }
+
+#{$selector--theme-light} .format-textSize--label
+  {
+    background-color: $c-bg-body--dark;
+    color: $c-text--dark;
+  }
+
+#{$selector-header-banner--dark} .format-textSize--label
+  {
+    background-color: $c-bg-body--light;
+    color: $c-text--light;
+  }
+
+
+
+
+#js-change-theme[data-theme='theme-light']:after
+  {
+    left: auto;
+    right: rem(2px);
+  }
+
+/* Если тема светлая, то в dropdown в ней темный, а тоглер тогда светлый*/
+#{$selector--theme-light} .header-top .dropdown .toggler-control
+  {
+    background-color: $c-bg-header--light;
+
+    &:after{
+      background-color: $c-link--light;
+    } 
+  }
+
+/* Если тема темная или темный баннер, то в dropdown в ней светлый, а тоглер тогда темный*/
+#{$selector--theme-dark} .header-top .dropdown .toggler-control, #{$selector-header-banner--dark} .header-top .dropdown .toggler-control
+  {
+    background-color: $c-bg-header--dark;
+
+    &:after{
+      background-color: $c-link--dark;
+    } 
+  }
+
+
+.header-top .format-textSize
+  {
+    margin: rem(0 1rem);
+  }
+
+
+
+.header--banner-dark
+  {
+    padding-top: rem(70px);
+    padding-bottom: rem(100px);
+    overflow: hidden;
+
+    .w-base { position: relative; }
+
+    .logo
+      {
+        position: relative;
+
+        &:before, &:after{
+          content:"";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-repeat: no-repeat;
+          background-size: contain;
+
+          animation: NeonTremor1 2s infinite;
+        }
+
+        &:before{
+          background-image: image-url('logo-part-blue.svg');
+          z-index: 2;
+          opacity: 0.5;
+        }
+        &:after{
+          background-image: image-url('logo-part-crimson.svg');
+          animation-name: NeonTremor2;
+          z-index: 1;
+        }
+
+
+        span
+        {
+          background-image: image-url($src-logo--header-dark-banner);
+          // width: rem(280px);
+          // height: rem(114px);
+          @include logo-size(280px);
+
+          position: relative;
+          z-index: 0;
+        }
+      }
+
+      p
+        {
+          width: 50%;
+          margin-top: rem(40px);
+          font-size: rem(25px);
+        }
+  }
+
+.banner-content
+  {
+    position: relative;
+    z-index: 1;
+  }
+
+
+.banner-image
+  {
+    position: absolute;
+    width: 422px;
+    height: 225px;
+    top: 0;
+    right: 40px;
+    z-index: 0;
+
+    img
+      {
+        position: absolute;
+      }
+  }
+
+.banner-image-1
+  {
+    width: 57px;
+
+    top: 55px;
+    left: 0;
+  }
+
+.banner-image-2
+  {
+    width: 70px;
+    left: 130px;
+    bottom: 0;
+  }
+
+.banner-image-3
+  {
+    width: 300px;
+    top: 0;
+    left: 120px;
+  }
+
+
+@media screen and (max-width: 810px) 
+  {
+    .banner-image-3
+      {
+         display: none
+      }
+
+    .banner-image
+      {
+        right: auto;
+        left: 60%;
+      }
+
+    .header--banner-dark
+      {
+        p { width: 70%; }
+      }
+  }
+
+@media screen and (max-width: 560px) 
+  {
+    .banner-image-1, .banner-image-2
+      {
+        display: none;
+      }
+
+    .header--banner-dark
+      {
+        p { width: 100%; }
+      }
+  }
