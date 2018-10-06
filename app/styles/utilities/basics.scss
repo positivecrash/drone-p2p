@@ -195,7 +195,7 @@ body#{$selector--theme-light}
   {
     display: block;
     box-sizing: border-box;
-    padding: rem(20px);
+    padding: 10px 20px;
     position: relative;
 
     .assets-logo--download
@@ -203,10 +203,10 @@ body#{$selector--theme-light}
         display: none;
 
         position: absolute;
-        top: 20px;
+        top: 10px;
         left: 0;
         right: 0;
-        bottom: 20px;
+        bottom: 10px;
         z-index: 0;
 
         .assets-logo--download-inside
