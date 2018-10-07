@@ -448,6 +448,7 @@ b {
 .list-double li {
   float: left;
   width: 45%;
+  margin-right: 5%;
 }
 
 .back-dark {
