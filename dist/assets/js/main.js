@@ -1,22 +1,32 @@
-window.onload=function(){
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+/* 0-cookie.js requires */
+
+window.addEventListener('load', function(){
+	var
+		agreementMsg      = document.querySelector('#js-cookiePolicy'),
+		agreementBtn      = document.querySelector('#js-cookiePolicy .btn-line'),
+		agreementCookie   = 'policy';
+
+		if(getCookie(agreementCookie)){
+			agreementMsg.style.display = 'none';
+		}
+
+		agreementBtn.addEventListener('click', function(){
+			document.cookie = agreementCookie+'=true';
+			agreementMsg.style.display = 'none';
+		});
+});
+window.addEventListener('load', function(){
 
 	/* EMAIL */
 	var email = 'contact@drone-p2p.io';
 	document.querySelector('#email').innerHTML = '<a class="t-uppercase" href="mailto:'+ email +'">' + email +'</a>';
 	/* end of EMAIL */
-
-
-	/* BASIC FUNCTIONS */
-
-	function getCookie(name) {
-	  var matches = document.cookie.match(new RegExp(
-	    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-	  ));
-	  return matches ? decodeURIComponent(matches[1]) : undefined;
-	}
-
-	/* end of BASIC FUNCTIONS */
-
 
 
 	/* TOGGLE THEME */
@@ -94,25 +104,4 @@ window.onload=function(){
 	/* end of TEXT SIZE CHANGE */
 
 
-
-	/* COOKIE POLICY */
-
-	var policyMsg = document.querySelector('#js-cookiePolicy');
-	var policyBtn = document.querySelector('#js-cookiePolicy .btn-line');
-
-	var cookiePolicy = getCookie('policy');
-	console.log(cookiePolicy);
-
-	if(cookiePolicy){
-		policyMsg.style.display = "none";
-	}
-
-	policyBtn.addEventListener('click', function(){
-		document.cookie = "policy=true";
-		policyMsg.style.display = "none";
-	});
-
-	/* end of COOKIE POLICY */
-
-
-}
+});
