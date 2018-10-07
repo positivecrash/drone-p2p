@@ -1,5 +1,11 @@
 window.onload=function(){
 
+	/* EMAIL */
+	var email = 'contact@drone-p2p.io';
+	document.querySelector('#email').innerHTML = '<a class="t-uppercase" href="mailto:'+ email +'">' + email +'</a>';
+	/* end of EMAIL */
+
+
 	/* BASIC FUNCTIONS */
 
 	function getCookie(name) {

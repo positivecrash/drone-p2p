@@ -447,7 +447,7 @@ b {
 }
 .list-double li {
   float: left;
-  width: 50%;
+  width: 45%;
 }
 
 .back-dark {
@@ -1158,6 +1158,10 @@ footer[role='contentinfo'] .list-double a:hover {
 
 .theme-light .btn-circle {
   background-color: #03A5ED;
+}
+
+.header---wrap-banner--dark .btn-circle {
+  background-color: #00FFFF;
 }
 
 .btn {
