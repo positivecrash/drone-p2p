@@ -14,4 +14,4 @@ window.addEventListener('load', function(){
 			document.cookie = agreementCookie+'=true';
 			agreementMsg.style.display = 'none';
 		});
-});
+}, false);

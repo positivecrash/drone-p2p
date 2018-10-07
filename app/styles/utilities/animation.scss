@@ -66,3 +66,22 @@ $animation-tremor-gap: 6px;
     transform: translateX(0);
   }
 }
+
+
+@keyframes Float {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(#{random(10)}px) rotate(#{random(10)}px);
+  }
+  50% {
+    transform: translateY(#{random(10)}px) rotate(#{random(10)}deg);
+  }
+  75% {
+    transform: translateY(#{random(10)}px) rotate(#{random(10)}px);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}

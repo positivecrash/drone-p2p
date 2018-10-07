@@ -6,49 +6,6 @@ window.addEventListener('load', function(){
 	/* end of EMAIL */
 
 
-	/* TOGGLE THEME */
-	var themeToggler = document.querySelector('#js-change-theme');
-	var themeLight = 'theme-light';
-	var themeDark = 'theme-dark';
-
-	function switchTheme(theme){
-
-		if (theme){
-			document.body.classList.remove(themeLight, themeDark);
-			document.body.classList.add(theme);
-			themeToggler.dataset.theme = theme;
-			document.cookie = "theme="+theme;
-		}
-		
-	}
-
-
-	if(themeToggler){
-
-		var cookieTheme = getCookie('theme');
-
-		if(cookieTheme){
-			switchTheme(cookieTheme);
-		}
-		else{
-			switchTheme(themeDark);
-		}
-
-		themeToggler.addEventListener('click', function(){
-
-			if(this.dataset.theme == themeDark){
-				this.dataset.theme = themeLight;
-				switchTheme(themeLight);
-			}
-			else{
-				this.dataset.theme = themeDark;
-				switchTheme(themeDark);
-			}
-		});
-	}
-	/* end of TOGGLE THEME */
-
-
 
 
 	/* TEXT SIZE CHANGE */
@@ -81,4 +38,4 @@ window.addEventListener('load', function(){
 	/* end of TEXT SIZE CHANGE */
 
 
-});
+}, false);

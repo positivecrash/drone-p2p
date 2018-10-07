@@ -20,19 +20,16 @@ window.addEventListener('load', function(){
 			document.cookie = agreementCookie+'=true';
 			agreementMsg.style.display = 'none';
 		});
-});
+}, false);
+/* 0-cookie.js requires */
 window.addEventListener('load', function(){
 
-	/* EMAIL */
-	var email = 'contact@drone-p2p.io';
-	document.querySelector('#email').innerHTML = '<a class="t-uppercase" href="mailto:'+ email +'">' + email +'</a>';
-	/* end of EMAIL */
+	var
+		themeToggler = document.querySelector('#js-change-theme'),
+		themeLight = 'theme-light',
+		themeDark = 'theme-dark';
 
 
-	/* TOGGLE THEME */
-	var themeToggler = document.querySelector('#js-change-theme');
-	var themeLight = 'theme-light';
-	var themeDark = 'theme-dark';
 
 	function switchTheme(theme){
 
@@ -46,16 +43,18 @@ window.addEventListener('load', function(){
 	}
 
 
+
 	if(themeToggler){
 
 		var cookieTheme = getCookie('theme');
 
-		if(cookieTheme){
+		if(cookieTheme)
 			switchTheme(cookieTheme);
-		}
-		else{
+		else
 			switchTheme(themeDark);
-		}
+
+
+		/* Обрабатываем обычный клик */
 
 		themeToggler.addEventListener('click', function(){
 
@@ -68,8 +67,45 @@ window.addEventListener('load', function(){
 				switchTheme(themeDark);
 			}
 		});
+
+
+
+		/* Swipe on touch devices */
+
+		var initialTouchX = null;
+
+		function handleTouchStart(e){
+
+			initialTouchX = e.touches[0].clientX;
+			
+		}
+
+		function handleTouchMove(e){
+
+			if (!initialTouchX)
+				return;
+
+			//двинулись влево
+			if (initialTouchX > e.touches[0].clientX)
+				switchTheme(themeDark);
+			//двинулись вправо
+			if (initialTouchX < e.touches[0].clientX)
+				switchTheme(themeLight);
+		}
+		
+		themeToggler.addEventListener('touchstart', handleTouchStart, false);
+		themeToggler.addEventListener('touchmove', handleTouchMove, false);
+
 	}
-	/* end of TOGGLE THEME */
+
+
+}, false);
+window.addEventListener('load', function(){
+
+	/* EMAIL */
+	var email = 'contact@drone-p2p.io';
+	document.querySelector('#email').innerHTML = '<a class="t-uppercase" href="mailto:'+ email +'">' + email +'</a>';
+	/* end of EMAIL */
 
 
 
@@ -104,4 +140,4 @@ window.addEventListener('load', function(){
 	/* end of TEXT SIZE CHANGE */
 
 
-});
+}, false);

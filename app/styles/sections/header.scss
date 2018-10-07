@@ -467,12 +467,60 @@
       }
   }
 
+
+
+@keyframes BannerImgShow1 {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) rotate(45deg);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-50px) rotate(-15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes BannerImgShow2 {
+  0% {
+    opacity: 0;
+    transform: translateY(80px) rotate(-65deg);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-80px) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes BannerImgShow3 {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 .banner-image-1
   {
     width: 57px;
 
     top: 55px;
     left: 0;
+
+    transform: translateY(100px) rotate(45deg);
+    opacity: 0;
+    animation: BannerImgShow1 1s 0.4s ease-in forwards, Float #{random(7)+1}s 1.4s linear infinite;
   }
 
 .banner-image-2
@@ -480,6 +528,10 @@
     width: 70px;
     left: 130px;
     bottom: 0;
+
+    transform: translateY(80px) rotate(-65deg);
+    opacity: 0;
+    animation: BannerImgShow1 0.5s 0.8s ease-in forwards, Float #{random(7)+1}s 1.3s linear infinite;
   }
 
 .banner-image-3
@@ -487,6 +539,11 @@
     width: 300px;
     top: 0;
     left: 120px;
+
+
+    transform: translateX(200px);
+    opacity: 0;
+    animation: BannerImgShow3 0.8s 0.8s ease-in forwards;
   }
 
 
