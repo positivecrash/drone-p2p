@@ -73,13 +73,13 @@ $animation-tremor-gap: 6px;
     transform: translateY(0) rotate(0);
   }
   25% {
-    transform: translateY(#{random(10)}px) rotate(#{random(10)}px);
+    transform: translateY(#{random(40)-20}px) rotate(#{random(60)-30}px);
   }
   50% {
-    transform: translateY(#{random(10)}px) rotate(#{random(10)}deg);
+    transform: translateY(#{random(40)-20}px) rotate(#{random(60)-30}deg);
   }
   75% {
-    transform: translateY(#{random(10)}px) rotate(#{random(10)}px);
+    transform: translateY(#{random(40)-20}px) rotate(#{random(60)-30}px);
   }
   100% {
     transform: translateY(0) rotate(0);

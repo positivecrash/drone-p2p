@@ -289,6 +289,39 @@ body.theme-light {
   display: block;
 }
 
+#notfound-title {
+  text-align: center;
+  font-size: 180px;
+  line-height: 1;
+  color: #00FFFF;
+  position: relative;
+}
+#notfound-title span {
+  position: relative;
+  z-index: 1;
+}
+#notfound-title:before, #notfound-title:after {
+  content: "404";
+  text-align: center;
+  font-size: 180px;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  opacity: 0.4;
+}
+#notfound-title:before {
+  -webkit-animation: NeonTremor1 2s infinite;
+          animation: NeonTremor1 2s infinite;
+  color: #FF00FF;
+}
+#notfound-title:after {
+  -webkit-animation: NeonTremor2 2s infinite;
+          animation: NeonTremor2 2s infinite;
+}
+
 /* EXTENDS */
 body {
   font-size: 1.25rem;
@@ -612,16 +645,16 @@ b {
             transform: translateY(0) rotate(0);
   }
   25% {
-    -webkit-transform: translateY(1px) rotate(6px);
-            transform: translateY(1px) rotate(6px);
+    -webkit-transform: translateY(9px) rotate(21px);
+            transform: translateY(9px) rotate(21px);
   }
   50% {
-    -webkit-transform: translateY(9px) rotate(4deg);
-            transform: translateY(9px) rotate(4deg);
+    -webkit-transform: translateY(15px) rotate(2deg);
+            transform: translateY(15px) rotate(2deg);
   }
   75% {
-    -webkit-transform: translateY(9px) rotate(2px);
-            transform: translateY(9px) rotate(2px);
+    -webkit-transform: translateY(10px) rotate(11px);
+            transform: translateY(10px) rotate(11px);
   }
   100% {
     -webkit-transform: translateY(0) rotate(0);
@@ -634,16 +667,16 @@ b {
             transform: translateY(0) rotate(0);
   }
   25% {
-    -webkit-transform: translateY(1px) rotate(6px);
-            transform: translateY(1px) rotate(6px);
+    -webkit-transform: translateY(9px) rotate(21px);
+            transform: translateY(9px) rotate(21px);
   }
   50% {
-    -webkit-transform: translateY(9px) rotate(4deg);
-            transform: translateY(9px) rotate(4deg);
+    -webkit-transform: translateY(15px) rotate(2deg);
+            transform: translateY(15px) rotate(2deg);
   }
   75% {
-    -webkit-transform: translateY(9px) rotate(2px);
-            transform: translateY(9px) rotate(2px);
+    -webkit-transform: translateY(10px) rotate(11px);
+            transform: translateY(10px) rotate(11px);
   }
   100% {
     -webkit-transform: translateY(0) rotate(0);
@@ -655,7 +688,7 @@ b {
   src: url("../fonts/CustomIcons.eot");
   src: url("../fonts/CustomIcons.eot?#iefix") format("eot"), url("../fonts/CustomIcons.woff") format("woff"), url("../fonts/CustomIcons.ttf") format("truetype"), url("../fonts/CustomIcons.svg#CustomIcons") format("svg");
 }
-.icon-app:before, .icon-github:before, .icon-info:before, .icon-settings:before {
+.icon-app:before, .icon-github:before, .icon-home:before, .icon-info:before, .icon-settings:before {
   font-family: "CustomIcons";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -675,12 +708,16 @@ b {
   content: "";
 }
 
-.icon-info:before {
+.icon-home:before {
   content: "";
 }
 
-.icon-settings:before {
+.icon-info:before {
   content: "";
+}
+
+.icon-settings:before {
+  content: "";
 }
 
 section {
@@ -1199,8 +1236,8 @@ section {
   -webkit-transform: translateY(100px) rotate(45deg);
           transform: translateY(100px) rotate(45deg);
   opacity: 0;
-  -webkit-animation: BannerImgShow1 1s 0.4s ease-in forwards, Float 2s 1.4s linear infinite;
-          animation: BannerImgShow1 1s 0.4s ease-in forwards, Float 2s 1.4s linear infinite;
+  -webkit-animation: BannerImgShow1 1s 0.4s ease-in forwards, Float 6s 1.4s linear infinite;
+          animation: BannerImgShow1 1s 0.4s ease-in forwards, Float 6s 1.4s linear infinite;
 }
 
 .banner-image-2 {

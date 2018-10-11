@@ -1,10 +1,20 @@
 extends extends/layout.pug
 
 block html_head
-	- var pageTitle = 'Drone P2P Framework'
+	- var pageTitle = 'Cookie Policy'
+	- var pageDescription = 'For general web-browsing of this website, your personal data is not revealed to us. Read more about usage of cookies on our website.'
+	- var pageKeywords = ''
+
+block html_head_og
+	- var ogUrl = 'cookie-policy.html'
+	- var ogTitle = 'Cookie Policy on drone-p2p.io'
+	- var ogDescription = 'For general web-browsing of this website, your personal data is not revealed to us. Read more about usage of cookies on our website.'
 
 block header
 	- var header_banner = false
+
+block html
+	- var bodyclass = ''
 
 
 block content

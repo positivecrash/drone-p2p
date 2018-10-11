@@ -1,0 +1,28 @@
+extends extends/layout.pug
+
+block html_head
+	- var pageTitle = 'Page not found'
+	- var pageDescription = ''
+	- var pageKeywords = ''
+
+block header
+	- var header_banner = false
+
+block html
+	- var bodyclass = ''
+	- var metaRobots = 'noindex'
+
+
+block content
+	main(role="main")
+		.w-text
+			section
+				#notfound-title: span 404
+
+				.t-align-center Page were lost or never been created
+
+				.t-align-center.m-t-base-2
+					a(href="/").btn
+						span.btn-content
+							span.icon-home.m-r-base
+							span Go to the home page

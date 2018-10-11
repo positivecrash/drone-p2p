@@ -5,22 +5,35 @@ html(lang='en')
 	head
 		meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
 		meta(name='viewport' content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+		if metaRobots
+			meta(name="robots" content=metaRobots)
 		
+		//-- Basic SEO
 		block html_head
-		title #{pageTitle} | airalab.org
+		title #{pageTitle} | Drone P2P Framework
 		meta(name='description' content=pageDescription || '')
 		meta(name='keywords' content=pageKeywords || '')
 
 
-		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;subset=cyrillic" type="text/css" media="all")
+		//-- Open Graph
+		block html_head_og
+		meta(property='og:url' content='https://drone-p2p.io/'+ogUrl)
+		meta(property='og:type' content=ogType || 'website')
+		meta(property='og:title' content=ogTitle || 'Drone P2P – the framework for multi-agent communication on mobile robotics market')
+		meta(property='og:description' content=ogDescription || 'This framework enables developers such p2p technologies as IPFS and Ethereum in order to provide communication with an autonomous base of mobile robotics.')
+		meta(property='og:image' content=ogImage || 'https://drone-p2p.io/assets/i/drone-p2p-banner.png')
+		meta(property='og:site_name' content="Drone P2P")
 
 
-		link(href='assets/css/dronep2p.min.css?v=1' rel='stylesheet')
-			
-		script(src='assets/js/main.min.js?v=1')
+		//-- Twitter meta
+		//- block html_head_twitterMeta
+		//- meta(property='twitter:card' content=twitterDescription || 'This framework enables developers such p2p technologies as IPFS and Ethereum in order to provide communication with an autonomous base of mobile robotics.')
 
-		link(rel="icon" href="favicon.ico" type="image/x-icon")
-		link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
+
+		//-- Icons
+		link(rel="icon" href="favicon.ico" sizes="32x32" type="image/x-icon")
+		link(rel="shortcut icon" href="favicon.ico" sizes="32x32" type="image/x-icon")
 		link(rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png")
 		link(rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png")
 
@@ -34,3 +47,12 @@ html(lang='en')
 		block content
 
 		include ../includes/footer.pug
+
+		//-- Yandex.Metrika counter
+		<script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter50655262 = new Ya.Metrika2({ id:50655262, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/50655262" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		//-- /Yandex.Metrika counter
+
+		//-- Resources
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;subset=cyrillic" type="text/css" media="all")
+		link(href='assets/css/dronep2p.min.css?v=1' rel='stylesheet prefetch')
+		script(src='assets/js/main.min.js?v=1' rel='prefetch')

@@ -1,11 +1,19 @@
 extends extends/layout.pug
 
 block html_head
-	- var pageTitle = 'Drone P2P Framework'
+	- var pageTitle = 'Multi-agent communication on mobile robotics market'
+	- var pageDescription = 'This framework enables developers such p2p technologies as IPFS and Ethereum in order to provide communication with an autonomous base of mobile robotics.'
+	- var pageKeywords = 'robotics drone communication framework market Ethereum IPFS autonomous decetrilized operator Robonomics Blockchain registration transaction technical financial peer-to-peer'
+
+block html_head_og
+	- var ogUrl = ''
 
 block header
 	- var header_classes = 'header---wrap-banner--dark'
 	- var header_banner = true
+
+block html
+	- var bodyclass = ''
 
 block content
 	main(role="main")
@@ -31,7 +39,7 @@ block content
 					.line Flight simulation and route correction before the drone’s departure.
 
 				.t-align-center.m-t-base-2
-					a(href="https://drone-employee.com/registration", target="_blank").btn
+					a(href="https://drone-employee.com/registration", target="_blank", onclick="yaCounter50655262.reachGoal('yaTryDapp'); return true;").btn
 						span.btn-content
 							span.icon-app.m-r-base
 							span Try dApp

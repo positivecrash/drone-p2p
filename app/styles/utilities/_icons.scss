@@ -34,11 +34,14 @@
 	@if $filename == github {
 		$char: "\E002";
 	}
-	@if $filename == info {
+	@if $filename == home {
 		$char: "\E003";
 	}
-	@if $filename == settings {
+	@if $filename == info {
 		$char: "\E004";
+	}
+	@if $filename == settings {
+		$char: "\E005";
 	}
 
 	@return $char;
@@ -60,6 +63,9 @@
 }
 .icon-github {
 	@include icon(github);
+}
+.icon-home {
+	@include icon(home);
 }
 .icon-info {
 	@include icon(info);
